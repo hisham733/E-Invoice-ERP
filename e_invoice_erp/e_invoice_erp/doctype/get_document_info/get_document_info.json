@@ -1,0 +1,266 @@
+{
+ "autoname": "naming_series: ",
+ "creation": "2024-06-19 14:30:41.788309",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "sales_e_invoice",
+  "submission_uid",
+  "status",
+  "document_count",
+  "date_time_received",
+  "overall_status",
+  "uuid",
+  "submission_uid_summary",
+  "long_id",
+  "internal_id",
+  "type_name",
+  "type_version_name",
+  "issuer_tin",
+  "issuer_name",
+  "receiver_id",
+  "receiver_name",
+  "date_time_received_summary",
+  "date_time_validated",
+  "total_payable_amount",
+  "total_excluding_tax",
+  "total_discount",
+  "total_net_amount",
+  "cancel_date_time",
+  "reject_request_date_time",
+  "document_status_reason",
+  "created_by_user_id",
+  "naming_series"
+ ],
+ "fields": [
+  {
+   "fieldname": "sales_e_invoice",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Sales E Invoice",
+   "options": "Sales E Invoice",
+   "reqd": 1
+  },
+  {
+   "bold": 1,
+   "fetch_from": "sales_e_invoice.submission_uid",
+   "fieldname": "submission_uid",
+   "fieldtype": "Data",
+   "label": "Submission UID"
+  },
+  {
+   "bold": 1,
+   "fieldname": "status",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Status",
+   "read_only": 1
+  },
+  {
+   "bold": 1,
+   "fieldname": "document_count",
+   "fieldtype": "Data",
+   "label": "Document Count",
+   "read_only": 1
+  },
+  {
+   "bold": 1,
+   "fieldname": "date_time_received",
+   "fieldtype": "Date",
+   "label": "Date Time Received",
+   "read_only": 1
+  },
+  {
+   "bold": 1,
+   "fieldname": "overall_status",
+   "fieldtype": "Data",
+   "label": "Overall Status",
+   "read_only": 1
+  },
+  {
+   "bold": 1,
+   "fieldname": "uuid",
+   "fieldtype": "Data",
+   "label": "UUID",
+   "read_only": 1
+  },
+  {
+   "bold": 1,
+   "fieldname": "submission_uid_summary",
+   "fieldtype": "Data",
+   "label": "Submission UID (Summary)",
+   "read_only": 1
+  },
+  {
+   "bold": 1,
+   "fieldname": "long_id",
+   "fieldtype": "Data",
+   "label": "Long ID",
+   "read_only": 1
+  },
+  {
+   "bold": 1,
+   "fieldname": "internal_id",
+   "fieldtype": "Data",
+   "label": "Internal ID",
+   "read_only": 1
+  },
+  {
+   "bold": 1,
+   "fieldname": "type_name",
+   "fieldtype": "Data",
+   "label": "Type Name",
+   "read_only": 1
+  },
+  {
+   "bold": 1,
+   "fieldname": "type_version_name",
+   "fieldtype": "Data",
+   "label": "Type Version Name",
+   "read_only": 1
+  },
+  {
+   "bold": 1,
+   "fieldname": "issuer_tin",
+   "fieldtype": "Data",
+   "label": "Issuer TIN",
+   "read_only": 1
+  },
+  {
+   "bold": 1,
+   "fieldname": "issuer_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Issuer Name",
+   "read_only": 1
+  },
+  {
+   "bold": 1,
+   "fieldname": "receiver_id",
+   "fieldtype": "Data",
+   "label": "Receiver ID",
+   "read_only": 1
+  },
+  {
+   "bold": 1,
+   "fieldname": "receiver_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Receiver Name",
+   "read_only": 1
+  },
+  {
+   "bold": 1,
+   "fieldname": "date_time_received_summary",
+   "fieldtype": "Datetime",
+   "label": "Date Time Received (Summary)",
+   "read_only": 1
+  },
+  {
+   "bold": 1,
+   "fieldname": "date_time_validated",
+   "fieldtype": "Datetime",
+   "label": "Date Time Validated",
+   "read_only": 1
+  },
+  {
+   "bold": 1,
+   "fieldname": "total_payable_amount",
+   "fieldtype": "Currency",
+   "label": "Total Payable Amount",
+   "read_only": 1
+  },
+  {
+   "bold": 1,
+   "fieldname": "total_excluding_tax",
+   "fieldtype": "Currency",
+   "label": "Total Excluding Tax",
+   "read_only": 1
+  },
+  {
+   "bold": 1,
+   "fieldname": "total_discount",
+   "fieldtype": "Currency",
+   "label": "Total Discount",
+   "read_only": 1
+  },
+  {
+   "bold": 1,
+   "fieldname": "total_net_amount",
+   "fieldtype": "Currency",
+   "label": "Total Net Amount",
+   "read_only": 1
+  },
+  {
+   "bold": 1,
+   "fieldname": "cancel_date_time",
+   "fieldtype": "Datetime",
+   "label": "Cancel DateTime",
+   "read_only": 1
+  },
+  {
+   "bold": 1,
+   "fieldname": "reject_request_date_time",
+   "fieldtype": "Datetime",
+   "label": "Reject Request DateTime",
+   "read_only": 1
+  },
+  {
+   "bold": 1,
+   "fieldname": "document_status_reason",
+   "fieldtype": "Data",
+   "label": "Document Status Reason",
+   "read_only": 1
+  },
+  {
+   "bold": 1,
+   "fieldname": "created_by_user_id",
+   "fieldtype": "Data",
+   "label": "Created By User ID",
+   "read_only": 1
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "ACC-GDF-.YYYY.-"
+  }
+ ],
+ "modified": "2024-06-29 21:05:38.283212",
+ "modified_by": "Administrator",
+ "module": "E Invoice Erp",
+ "name": "Get Document Info",
+ "name_case": "Title Case",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Sales User",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "timeline_field": "sales_e_invoice",
+ "track_changes": 1
+}
