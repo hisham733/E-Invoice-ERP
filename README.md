@@ -8,5 +8,5 @@ MIT
 
 #### Installation
 
-    bench get-app E-Invoice https://github.com/hisham733/E-Invoice-ERP.git
-    bench install-app E-Invoice
+    bench get-app e_invoice_erp https://github.com/hisham733/E-Invoice-ERP.git
+    bench install-app e_invoice_erp
