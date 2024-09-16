@@ -268,7 +268,8 @@
    "bold": 1,
    "fieldname": "submission_uid",
    "fieldtype": "Data",
-   "label": "Submission Uid"
+   "label": "Submission Uid",
+   "read_only": 1
   },
   {
    "bold": 1,
@@ -282,14 +283,16 @@
    "bold": 1,
    "fieldname": "uuid",
    "fieldtype": "Data",
-   "label": "UUID"
+   "label": "UUID",
+   "read_only": 1
   },
   {
    "allow_on_submit": 1,
    "bold": 1,
    "fieldname": "invoicecodenumber",
    "fieldtype": "Data",
-   "label": "invoice Code Number"
+   "label": "invoice Code Number",
+   "read_only": 1
   },
   {
    "fieldname": "accounting_customer_party_section",
@@ -306,6 +309,7 @@
    "oldfieldtype": "Link",
    "options": "Customer",
    "print_hide": 1,
+   "reqd": 1,
    "search_index": 1
   },
   {
@@ -321,16 +325,16 @@
    "read_only": 1
   },
   {
-   "default": "C5865317010",
    "fieldname": "customer_tin",
    "fieldtype": "Data",
-   "label": "Customer TIN"
+   "label": "Customer TIN",
+   "reqd": 1
   },
   {
-   "default": "199201002549",
    "fieldname": "customer_brn",
    "fieldtype": "Data",
-   "label": "Customer BRN"
+   "label": "Customer BRN",
+   "reqd": 1
   },
   {
    "fieldname": "tax_id",
@@ -383,37 +387,48 @@
    "fieldtype": "Link",
    "label": "Customer Address",
    "options": "Address",
-   "print_hide": 1
+   "print_hide": 1,
+   "reqd": 1
   },
   {
+   "depends_on": "customer_address",
    "fetch_from": "customer_address.address_line1",
    "fieldname": "address_line1",
    "fieldtype": "Data",
-   "label": "Address line1"
+   "label": "Address line1",
+   "reqd": 1
   },
   {
+   "depends_on": "customer_address",
    "fetch_from": "customer_address.city",
    "fieldname": "city_customer",
    "fieldtype": "Data",
-   "label": "City"
+   "label": "City",
+   "reqd": 1
   },
   {
+   "depends_on": "customer_address",
    "fetch_from": "customer_address.state",
    "fieldname": "state_customer",
    "fieldtype": "Data",
-   "label": "State"
+   "label": "State",
+   "reqd": 1
   },
   {
+   "depends_on": "customer_address",
    "fetch_from": "customer_address.state_codes",
    "fieldname": "customer_state_code",
    "fieldtype": "Data",
-   "label": "Customer State Code "
+   "label": "Customer State Code ",
+   "reqd": 1
   },
   {
+   "depends_on": "customer_address",
    "fetch_from": "customer_address.pincode",
    "fieldname": "customer_postal_code",
    "fieldtype": "Data",
-   "label": "Customer Postal Code"
+   "label": "Customer Postal Code",
+   "reqd": 1
   },
   {
    "fieldname": "address_display",
@@ -466,7 +481,8 @@
    "fetch_from": "customer_address.phone",
    "fieldname": "customer_phone",
    "fieldtype": "Data",
-   "label": "Customer Phone"
+   "label": "Customer Phone",
+   "reqd": 1
   },
   {
    "fieldname": "shipping_address_name",
@@ -534,7 +550,8 @@
    "no_copy": 1,
    "oldfieldname": "posting_time",
    "oldfieldtype": "Time",
-   "print_hide": 1
+   "print_hide": 1,
+   "reqd": 1
   },
   {
    "default": "0",
@@ -552,13 +569,15 @@
    "fieldname": "e_invoice_type_code",
    "fieldtype": "Select",
    "label": "E_Invoice Type",
-   "options": "01\n02\n03\n04"
+   "options": "01\n02\n03\n04",
+   "reqd": 1
   },
   {
    "default": "762673792005",
    "fieldname": "additional_document_reference",
    "fieldtype": "Data",
-   "label": "Additional Document Reference"
+   "label": "Additional Document Reference",
+   "reqd": 1
   },
   {
    "fieldname": "due_date",
@@ -586,40 +605,46 @@
    "reqd": 1
   },
   {
-   "default": "96099",
    "fieldname": "msic_codes",
    "fieldtype": "Data",
-   "label": "(MSIC) Codes"
+   "label": "(MSIC) Codes",
+   "reqd": 1
   },
   {
    "fieldname": "registration_name",
    "fieldtype": "Link",
    "label": "Registration Name",
-   "options": "Lead"
+   "options": "Supplier",
+   "reqd": 1
   },
   {
-   "fetch_from": "registration_name.lead_name",
+   "depends_on": "registration_name",
+   "fetch_from": "registration_name.supplier_name",
    "fieldname": "registration_full_name",
    "fieldtype": "Data",
-   "label": "Registration Full Name"
+   "label": "Registration Full Name",
+   "reqd": 1
   },
   {
-   "default": "F788577060",
+   "depends_on": "registration_name",
    "fieldname": "supplier_tin",
    "fieldtype": "Data",
-   "label": "Supplier TIN"
+   "label": "Supplier TIN",
+   "reqd": 1
   },
   {
-   "default": "198901002487",
+   "depends_on": "registration_name",
    "fieldname": "supplier_brn",
    "fieldtype": "Data",
-   "label": "Supplier BRN"
+   "label": "Supplier BRN",
+   "reqd": 1
   },
   {
-   "default": "W10-1808-32000489",
+   "depends_on": "registration_name",
    "fieldname": "tourism_tax_registration",
    "fieldtype": "Data",
-   "label": "Tourism Tax Registration"
+   "label": "Tourism Tax Registration",
+   "reqd": 1
   },
   {
    "fieldname": "supplier_blook1_column",
@@ -636,37 +661,48 @@
    "fetch_from": "supplier_address_name.address_line1",
    "fieldname": "supplier_location",
    "fieldtype": "Data",
-   "label": "Supplier Location"
+   "label": "Supplier Location",
+   "reqd": 1
   },
   {
+   "depends_on": "supplier_location",
    "fetch_from": "supplier_address_name.city",
    "fieldname": "supplier_city",
    "fieldtype": "Data",
-   "label": "City"
+   "label": "City",
+   "reqd": 1
   },
   {
+   "depends_on": "supplier_location",
    "fetch_from": "supplier_address_name.state",
    "fieldname": "supplier_state",
    "fieldtype": "Data",
-   "label": "Supplier State"
+   "label": "Supplier State",
+   "reqd": 1
   },
   {
+   "depends_on": "supplier_location",
    "fetch_from": "supplier_address_name.state_codes",
    "fieldname": "supplier_state_codes",
    "fieldtype": "Data",
-   "label": "State Codes"
+   "label": "State Codes",
+   "reqd": 1
   },
   {
+   "depends_on": "supplier_location",
    "fetch_from": "supplier_address_name.pincode",
    "fieldname": "supplier_postal_code",
    "fieldtype": "Data",
-   "label": "Postal Code"
+   "label": "Postal Code",
+   "reqd": 1
   },
   {
-   "fetch_from": "registration_name.mobile_no",
+   "depends_on": "supplier_location",
+   "fetch_from": "supplier_address_name.phone",
    "fieldname": "suplier_mobile",
    "fieldtype": "Data",
-   "label": "Supplier Mobile"
+   "label": "Supplier Mobile",
+   "reqd": 1
   },
   {
    "depends_on": "return_against",
@@ -858,6 +894,7 @@
    "default": "Products",
    "fieldname": "description",
    "fieldtype": "Small Text",
+   "hidden": 1,
    "label": "Description"
   },
   {
@@ -975,7 +1012,8 @@
    "label": "Net Total",
    "options": "currency",
    "print_hide": 1,
-   "read_only": 1
+   "read_only": 1,
+   "reqd": 1
   },
   {
    "fieldname": "taxes_section",
@@ -1009,7 +1047,8 @@
    "fieldtype": "Link",
    "label": "Tax Category",
    "options": "Tax Category",
-   "print_hide": 1
+   "print_hide": 1,
+   "reqd": 1
   },
   {
    "fieldname": "section_break_40",
@@ -1036,7 +1075,8 @@
    "no_copy": 1,
    "oldfieldtype": "HTML",
    "print_hide": 1,
-   "read_only": 1
+   "read_only": 1,
+   "reqd": 1
   },
   {
    "fieldname": "section_break_43",
@@ -1062,7 +1102,8 @@
    "label": "Total Taxes and Charges",
    "options": "currency",
    "print_hide": 1,
-   "read_only": 1
+   "read_only": 1,
+   "reqd": 1
   },
   {
    "collapsible": 1,
@@ -1249,7 +1290,8 @@
    "oldfieldname": "rounded_total_export",
    "oldfieldtype": "Currency",
    "options": "currency",
-   "read_only": 1
+   "read_only": 1,
+   "reqd": 1
   },
   {
    "fieldname": "in_words",
@@ -1829,7 +1871,7 @@
  ],
  "icon": "fa fa-file-text",
  "is_submittable": 1,
- "modified": "2024-06-29 22:17:44.514867",
+ "modified": "2024-09-16 17:31:27.408407",
  "modified_by": "Administrator",
  "module": "E Invoice Erp",
  "name": "Sales E Invoice",
