@@ -56,6 +56,7 @@ def get_data():
 					"name": "Sales Invoice",
 					"onboard": 1,
 
+
 				},
 
 			]
@@ -68,18 +69,23 @@ def get_data():
 					"type": "doctype",
 					"name": "Sales E Invoice",
 					"onboard": 1,
+					"dependencies": ["Sales Invoice"]
+
 
 				},
 				{
 					"type": "doctype",
 					"name": "Get Document Info",
 					"onboard": 1,
+					"dependencies": ["Sales E Invoice"]
 
 				},
 				{
 					"type": "doctype",
 					"name": "Cancel Document",
 					"onboard": 1,
+					"dependencies": ["Sales E Invoice"]
+
 
 				},
 
